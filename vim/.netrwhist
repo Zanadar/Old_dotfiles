@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/home/zanadar/Zanadar.github.io/_posts'
+let g:netrw_dirhist_2='/home/zanadar/apps/intermediate-rails/shouter/app/views/dashboards'
+let g:netrw_dirhist_3='/home/zanadar/apps/shoes4'
+let g:netrw_dirhist_4='/home/zanadar/apps/shoes4/shoes'
+let g:netrw_dirhist_5='/home/zanadar/apps/shoes4/shoes/lib'
+let g:netrw_dirhist_6='/home/zanadar/apps/shoes4/shoes/lib/shoes'
