@@ -1,42 +1,64 @@
 set nocompatible
 set autowrite
 
-let mapleader = " "
+set rtp+=~/dotfiles/vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Bundle 'gmarik/Vundle.vim'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-rails'
+Bundle 'nanotech/jellybeans.vim'
+Bundle 'scrooloose/syntastic'
+Bundle 'bling/vim-airline'
+Bundle 'rking/ag.vim'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+Bundle 'garbas/vim-snipmate'
+Bundle 'honza/vim-snippets'
+Bundle 'tpope/vim-haml'
+Bundle 'kana/vim-textobj-user'
+Bundle 'nelstrom/vim-textobj-rubyblock'
+Bundle 'Yggdroot/indentLine'
+
+call vundle#end()            " required
+filetype plugin indent on  
+
+let mapleader = ","
 let g:ackprg = 'ag --nogroup --nocolor --column'
 let g:NERDTreeWinPos = "right"
 
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+runtime macros/matchit.vim
 set nobackup
 set nowritebackup
 set noswapfile
-set history=50
+set history=1000
 set ruler
-
 syntax enable
-set background=dark
-
 set tabstop=2
 set shiftwidth=2
 set shiftround
 set expandtab
-
 set number
 set showcmd
 set cursorline
-
-filetype plugin indent on
-
+set nowrap
+set modelines=0
 set wildmenu
-
 set lazyredraw
-
 set showmatch
 set incsearch
 set laststatus=2
 
 " Color scheme
-colorscheme solarized
-highlight NonText guibg=#060606
-highlight Folded  guibg=#0A0A0A guifg=#9090D0
+colorscheme jellybeans
 
 nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
@@ -46,7 +68,6 @@ nnoremap <Down> :echoe "Use j"<CR>
 " Show extra whitespace
 set list
 
-execute pathogen#infect()
 inoremap <expr> dt strftime("%Y-%m-%d %T")             
 
 nnoremap <C-J> <C-W><C-J>
@@ -56,3 +77,5 @@ nnoremap <C-H> <C-W><C-H>
 
 set splitbelow
 set splitright
+
+set encoding=utf-8
